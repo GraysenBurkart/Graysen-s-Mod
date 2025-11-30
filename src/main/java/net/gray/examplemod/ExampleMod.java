@@ -105,8 +105,11 @@ public class ExampleMod
             event.accept(ModBlocks.ALEXANDRITE_BLOCK);
             event.accept(ModBlocks.MAGIC_TREE_BLOCK);
             event.accept(ModBlocks.MAGIC_TREE_PLANKS);
-            event.accept(ModBlocks.MAGIC_TREE_LEAVES);
             event.accept(ModBlocks.PURPLE_MOSS_BLOCK);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS){
+            event.accept(ModBlocks.MAGIC_TREE_LEAVES);
         }
 
 //        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)

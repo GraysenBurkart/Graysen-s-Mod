@@ -2,9 +2,11 @@ package net.gray.examplemod.block;
 
 import net.gray.examplemod.ExampleMod;
 import net.gray.examplemod.Item.ModItems;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,12 +21,12 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, ExampleMod.MODID);
 
     public static final RegistryObject<Block> ALEXANDRITE_STONE_BLOCK = registryBlock("alexandrite_stone_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+            () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of()
+                    .strength(5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> ALEXANDRITE_BLOCK = registryBlock("alexandrite_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+                    .strength(4f).sound(SoundType.AMETHYST)));
 
     public static final RegistryObject<Block> MAGIC_TREE_BLOCK = registryBlock("magic_tree_block",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -36,11 +38,11 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> MAGIC_TREE_LEAVES = registryBlock("magic_tree_leaves",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).sound(SoundType.CHERRY_LEAVES)));
+                    .strength(2f).sound(SoundType.CHERRY_LEAVES)));
 
     public static final RegistryObject<Block> PURPLE_MOSS_BLOCK = registryBlock("purple_moss_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).sound(SoundType.STONE)));
+                    .strength(5f).sound(SoundType.STONE)));
 
 
 
