@@ -4,11 +4,11 @@
   "group": "planks",
   "ingredients": [
     {
-      "tags": "minecraft:magic_tree_block"
+      "tags": "examplemod:magic_tree_block"
     }
   ],
   "result": {
     "count": 4,
-    "id": "minecraft:magic_tree_planks"
+    "id": "examplemod:magic_tree_planks"
   }
 }

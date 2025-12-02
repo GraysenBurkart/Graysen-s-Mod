@@ -23,6 +23,10 @@ public class ModItems {
     public static final RegistryObject<Item> UNBREAKABLE_BOTTLE = ITEMS.register("unbreakable_bottle",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> DRAGON_FRUIT = ITEMS.register("dragon_fruit",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.DRAGON_FRUIT)));
+
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

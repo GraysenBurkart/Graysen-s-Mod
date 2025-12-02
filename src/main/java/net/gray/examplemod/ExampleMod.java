@@ -100,6 +100,10 @@ public class ExampleMod
             event.accept(ModItems.UNBREAKABLE_BOTTLE);
         }
 
+        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
+            event.accept(ModItems.DRAGON_FRUIT);
+        }
+
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.ALEXANDRITE_STONE_BLOCK);
             event.accept(ModBlocks.ALEXANDRITE_BLOCK);
