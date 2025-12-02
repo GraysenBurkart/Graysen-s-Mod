@@ -104,6 +104,17 @@ public class ExampleMod
             event.accept(ModItems.DRAGON_FRUIT);
         }
 
+        if (event.getTabKey() == CreativeModeTabs.COMBAT){
+            event.accept((ModItems.FAE_SWORD));
+            event.accept(ModItems.FAE_AXE);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES){
+            event.accept(ModItems.FAE_PICKAXE);
+            event.accept(ModItems.FAE_SHOVEL);
+            event.accept(ModItems.FAE_HOE);
+        }
+
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.ALEXANDRITE_STONE_BLOCK);
             event.accept(ModBlocks.ALEXANDRITE_BLOCK);

@@ -4,6 +4,13 @@
   "item.examplemod.unbreakable_bottle": "Unbreakable Bottle",
   "item.examplemod.dragon_fruit": "Dragon Fruit",
 
+  "item.examplemod.fae_sword": "Fae Sword",
+  "item.examplemod.fae_axe": "Fae Axe",
+  "item.examplemod.fae_pickaxe": "Fae Pickaxe",
+  "item.examplemod.fae_shovel": "Fae Shovel",
+  "item.examplemod.fae_hoe": "Fae Hoe",
+
+
 
   "block.examplemod.alexandrite_stone_block": "Alexandrite Block",
   "block.examplemod.alexandrite_block": "Block of Alexandrite",

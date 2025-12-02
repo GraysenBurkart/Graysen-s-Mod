@@ -1,7 +1,7 @@
 package net.gray.examplemod.Item;
 
 import net.gray.examplemod.ExampleMod;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -25,6 +25,26 @@ public class ModItems {
 
     public static final RegistryObject<Item> DRAGON_FRUIT = ITEMS.register("dragon_fruit",
             () -> new Item(new Item.Properties().food(ModFoodProperties.DRAGON_FRUIT)));
+
+    public static final RegistryObject<Item> FAE_SWORD = ITEMS.register("fae_sword",
+            () -> new SwordItem(ModToolsTiers.FAE, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolsTiers.FAE, 3, -2.4f))));
+
+    public static final RegistryObject<Item> FAE_AXE = ITEMS.register("fae_axe",
+            () -> new AxeItem(ModToolsTiers.FAE, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolsTiers.FAE, 6, -3.2f))));
+
+    public static final RegistryObject<Item> FAE_PICKAXE = ITEMS.register("fae_pickaxe",
+            () -> new PickaxeItem(ModToolsTiers.FAE, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolsTiers.FAE, 1, -2.4f))));
+
+    public static final RegistryObject<Item> FAE_SHOVEL = ITEMS.register("fae_shovel",
+            () -> new ShovelItem(ModToolsTiers.FAE, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolsTiers.FAE, 1, -3.0f))));
+
+    public static final RegistryObject<Item> FAE_HOE = ITEMS.register("fae_sword",
+            () -> new HoeItem(ModToolsTiers.FAE, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolsTiers.FAE, 0, -3f))));
 
 
     public static void register(IEventBus eventBus) {
