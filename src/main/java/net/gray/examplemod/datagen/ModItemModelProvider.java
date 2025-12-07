@@ -3,6 +3,7 @@ package net.gray.examplemod.datagen;
 import net.gray.examplemod.ExampleMod;
 import net.gray.examplemod.Item.ModItems;
 import net.gray.examplemod.block.ModBlocks;
+import net.gray.examplemod.Item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -39,32 +40,33 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        assert item.getId() != null;
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.parse("item/handheld")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID,"item/" + item.getId().getPath()));
     }
 
-    public void buttonItem(RegistryObject<? extends Block> block, RegistryObject<Block> baseBlock) {
-        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
-                .texture("texture",  ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID,
-                        "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
-    }
+//    public void buttonItem(RegistryObject<? extends Block> block, RegistryObject<Block> baseBlock) {
+//        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
+//                .texture("texture",  ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID,
+//                        "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+//    }
 
-    public void fenceItem(RegistryObject<? extends Block> block, RegistryObject<Block> baseBlock) {
-        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/fence_inventory"))
-                .texture("texture",  ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID,
-                        "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
-    }
+//    public void fenceItem(RegistryObject<? extends Block> block, RegistryObject<Block> baseBlock) {
+//        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/fence_inventory"))
+//                .texture("texture",  ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID,
+//                        "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+//    }
 
-    public void wallItem(RegistryObject<? extends Block> block, RegistryObject<Block> baseBlock) {
-        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/wall_inventory"))
-                .texture("wall",  ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID,
-                        "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
-    }
+//    public void wallItem(RegistryObject<? extends Block> block, RegistryObject<Block> baseBlock) {
+//        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/wall_inventory"))
+//                .texture("wall",  ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID,
+//                        "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+//    }
 
-    private ItemModelBuilder simpleBlockItem(RegistryObject<? extends Block> item) {
-        return withExistingParent(item.getId().getPath(),
-                ResourceLocation.parse("item/generated")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID,"item/" + item.getId().getPath()));
-    }
+//    private ItemModelBuilder simpleBlockItem(RegistryObject<? extends Block> item) {
+//        return withExistingParent(item.getId().getPath(),
+//                ResourceLocation.parse("item/generated")).texture("layer0",
+//                ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID,"item/" + item.getId().getPath()));
+//    }
 }

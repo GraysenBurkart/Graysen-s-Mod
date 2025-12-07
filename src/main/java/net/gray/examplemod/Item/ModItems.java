@@ -3,6 +3,7 @@ package net.gray.examplemod.Item;
 import net.gray.examplemod.ExampleMod;
 import net.minecraft.world.item.*;
 
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -18,10 +19,10 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> LARGE_BOTTLE = ITEMS.register("large_bottle",
-            () -> new Item(new Item.Properties()));
+            () -> new BottleItem(new Item.Properties()));
 
     public static final RegistryObject<Item> UNBREAKABLE_BOTTLE = ITEMS.register("unbreakable_bottle",
-            () -> new Item(new Item.Properties()));
+            () -> new BottleItem(new Item.Properties()));
 
     public static final RegistryObject<Item> DRAGON_FRUIT = ITEMS.register("dragon_fruit",
             () -> new Item(new Item.Properties().food(ModFoodProperties.DRAGON_FRUIT)));
@@ -42,7 +43,7 @@ public class ModItems {
             () -> new ShovelItem(ModToolsTiers.FAE, new Item.Properties()
                     .attributes(ShovelItem.createAttributes(ModToolsTiers.FAE, 1, -3.0f))));
 
-    public static final RegistryObject<Item> FAE_HOE = ITEMS.register("fae_sword",
+    public static final RegistryObject<Item> FAE_HOE = ITEMS.register("fae_hoe",
             () -> new HoeItem(ModToolsTiers.FAE, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModToolsTiers.FAE, 0, -3f))));
 
