@@ -1,0 +1,7 @@
+// 1.21.1	2025-12-03T17:54:53.423491	Loot Tables
+b7f4aab08412ff18266a68a5c70393ec26b3b5f8 data/examplemod/loot_table/blocks/alexandrite_block.json
+b9987970328d472b10af98d48d23ad9e09a99bde data/examplemod/loot_table/blocks/alexandrite_stone_block.json
+ab8c025e724698409fcb043a21aae05dc77b0eef data/examplemod/loot_table/blocks/magic_tree_block.json
+50debb2e58ccb36f263b71b10fa6d132700a1077 data/examplemod/loot_table/blocks/magic_tree_leaves.json
+8e5a4fbc0c4865b681c0b6c3c26e6a5b16a8a296 data/examplemod/loot_table/blocks/magic_tree_planks.json
+fab474c0ff888cea4849e465b2a20bdb79e918a1 data/examplemod/loot_table/blocks/purple_moss_block.json
