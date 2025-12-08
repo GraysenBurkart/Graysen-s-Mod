@@ -7,4 +7,7 @@ import net.minecraft.world.food.FoodProperties;
 public class ModFoodProperties {
     public static final FoodProperties DRAGON_FRUIT = new FoodProperties.Builder().nutrition(5).saturationModifier(0.25f)
             .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,500), 0.15f).build();
+
+    public static final FoodProperties BOO_BERRIES = new FoodProperties.Builder().nutrition(3).saturationModifier(0.15f)
+            .effect(new MobEffectInstance(MobEffects.HEAL, 300), 0.5f).build();
 }

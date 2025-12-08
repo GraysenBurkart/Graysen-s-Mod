@@ -6,17 +6,31 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
 
 public class ModPlacedFeatures {
 
+    public static final ResourceKey<PlacedFeature> ALEXANDRITE_PLACED_KEY = registerKey("alexandrite_placed");
+    public static final ResourceKey<PlacedFeature> PURPLE_STONE_MOSS_KEY = registerKey("purple_stone_moss_placed");
+
+
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
+        register(context, ALEXANDRITE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_ALEXANDRITE_KEY),
+                ModOrePlacement.commonOrePlacement(12,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
+
+        register(context, PURPLE_STONE_MOSS_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_PURPLE_MOSS_STONE_KEY),
+                ModOrePlacement.commonOrePlacement(12,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-20), VerticalAnchor.absolute(100))));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

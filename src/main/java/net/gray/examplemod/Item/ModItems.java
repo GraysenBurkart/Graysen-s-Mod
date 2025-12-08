@@ -1,6 +1,7 @@
 package net.gray.examplemod.Item;
 
 import net.gray.examplemod.ExampleMod;
+import net.gray.examplemod.block.ModBlocks;
 import net.minecraft.world.item.*;
 
 import net.minecraft.world.item.component.ItemAttributeModifiers;
@@ -23,6 +24,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> UNBREAKABLE_BOTTLE = ITEMS.register("unbreakable_bottle",
             () -> new BottleItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> BOO_BERRIES = ITEMS.register("boo_berries",
+            () -> new ItemNameBlockItem(ModBlocks.BOO_BERRY_BUSH.get(), new Item.Properties().food(ModFoodProperties.BOO_BERRIES)));
 
     public static final RegistryObject<Item> DRAGON_FRUIT = ITEMS.register("dragon_fruit",
             () -> new Item(new Item.Properties().food(ModFoodProperties.DRAGON_FRUIT)));

@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -37,6 +38,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.FAE_SHOVEL);
         handheldItem(ModItems.FAE_AXE);
         handheldItem(ModItems.FAE_HOE);
+
+        basicItem(ModItems.BOO_BERRIES.get());
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {

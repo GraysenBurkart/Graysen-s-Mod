@@ -102,6 +102,7 @@ public class ExampleMod
 
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
             event.accept(ModItems.DRAGON_FRUIT);
+            event.accept(ModItems.BOO_BERRIES);
         }
 
         if (event.getTabKey() == CreativeModeTabs.COMBAT){
