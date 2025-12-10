@@ -2,10 +2,12 @@ package net.gray.examplemod.datagen;
 
 import net.gray.examplemod.ExampleMod;
 import net.gray.examplemod.Item.ModItems;
+import net.gray.examplemod.block.ModBlocks;
 import net.gray.examplemod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -26,5 +28,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(Items.COAL)
                 .add(Items.STICK)
                 .add(Items.COMPASS);
+
+        tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.MAGIC_TREE_BLOCK.get().asItem());
+
+        tag(ItemTags.PLANKS)
+                .add(ModBlocks.MAGIC_TREE_PLANKS.get().asItem());
     }
 }

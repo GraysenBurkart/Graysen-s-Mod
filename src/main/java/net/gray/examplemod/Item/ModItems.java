@@ -2,9 +2,11 @@ package net.gray.examplemod.Item;
 
 import net.gray.examplemod.ExampleMod;
 import net.gray.examplemod.block.ModBlocks;
+import net.gray.examplemod.entity.ModEntities;
 import net.minecraft.world.item.*;
 
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -50,6 +52,9 @@ public class ModItems {
     public static final RegistryObject<Item> FAE_HOE = ITEMS.register("fae_hoe",
             () -> new HoeItem(ModToolsTiers.FAE, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModToolsTiers.FAE, 0, -3f))));
+
+    public static final RegistryObject<Item> MAGIC_PIG_SPAWN_EGG = ITEMS.register("magic_pig_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.MAGIC_PIG, 0x5324b, 0xdac741, new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

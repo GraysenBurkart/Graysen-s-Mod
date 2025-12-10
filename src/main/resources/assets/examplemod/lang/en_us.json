@@ -12,13 +12,18 @@
   "item.examplemod.fae_shovel": "Fae Shovel",
   "item.examplemod.fae_hoe": "Fae Hoe",
 
+  "item.examplemod.magic_pig_spawn_egg": "Magic Pig Spawn Egg",
+
   "block.examplemod.alexandrite_stone_block": "Alexandrite Block",
   "block.examplemod.alexandrite_block": "Block of Alexandrite",
   "block.examplemod.magic_tree_block": "Magic Tree Log",
   "block.examplemod.magic_tree_planks": "Magic Tree Planks",
   "block.examplemod.magic_tree_leaves": "Magic Tree Leaves",
+  "block.examplemod.magic_sapling": "Magic Sapling",
   "block.examplemod.purple_moss_block": "Purple Moss Stone",
 
-  "block.examplemod.boo_berry_bush": "Boo Berry Bush"
+  "block.examplemod.boo_berry_bush": "Boo Berry Bush",
+
+  "entity.examplemod.magic_pig": "Magic Pig"
 
 }

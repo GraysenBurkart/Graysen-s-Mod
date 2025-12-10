@@ -3,14 +3,17 @@ package net.gray.examplemod.block;
 import net.gray.examplemod.ExampleMod;
 import net.gray.examplemod.Item.ModItems;
 import net.gray.examplemod.block.custom.BooBerryBushBlock;
+import net.gray.examplemod.block.custom.ModFlammableRotatedPillarBlock;
+import net.gray.examplemod.worldgen.tree.ModTreeGrowers;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,7 +25,7 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, ExampleMod.MODID);
 
-    public static final RegistryObject<Block> ALEXANDRITE_STONE_BLOCK = registryBlock("alexandrite_stone_block",
+    public static final RegistryObject<Block> ALEXANDRITE_STONE_BLOCK = registryBlock("alexandrite_stone_block.json.json",
             () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of()
                     .strength(5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
@@ -30,19 +33,52 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).sound(SoundType.AMETHYST)));
 
-    public static final RegistryObject<Block> MAGIC_TREE_BLOCK = registryBlock("magic_tree_block",
-            () -> new Block(BlockBehaviour.Properties.of()
+    public static final RegistryObject<RotatedPillarBlock> MAGIC_TREE_BLOCK = registryBlock("magic_tree_block",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.of()
                     .strength(3f).sound(SoundType.WOOD)));
 
     public final static RegistryObject<Block> MAGIC_TREE_PLANKS = registryBlock("magic_tree_planks",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).sound(SoundType.WOOD)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+            }
+            );
 
     public static final RegistryObject<Block> MAGIC_TREE_LEAVES = registryBlock("magic_tree_leaves",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(2f).sound(SoundType.CHERRY_LEAVES)));
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
 
-    public static final RegistryObject<Block> PURPLE_MOSS_BLOCK = registryBlock("purple_moss_block",
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+            }
+            );
+
+    public static final RegistryObject<Block> MAGIC_SAPLING = registryBlock("magid_sapling",
+            () -> new SaplingBlock(ModTreeGrowers.MAGIC, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> PURPLE_MOSS_BLOCK = registryBlock("purple_moss_block.json.json",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(5f).sound(SoundType.STONE)));
 

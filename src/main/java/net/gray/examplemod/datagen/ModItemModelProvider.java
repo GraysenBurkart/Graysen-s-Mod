@@ -40,6 +40,17 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.FAE_HOE);
 
         basicItem(ModItems.BOO_BERRIES.get());
+
+        saplingItem(ModBlocks.MAGIC_SAPLING);
+
+        withExistingParent(ModItems.MAGIC_PIG_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
+    }
+
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID,"block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {

@@ -1,5 +1,6 @@
 package net.gray.examplemod.block.custom;
 
+
 import net.gray.examplemod.Item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -16,12 +17,12 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class BooBerryBushBlock extends SweetBerryBushBlock {
-    public BooBerryBushBlock(Properties p_57249_){
-        super(p_57249_);
+    public BooBerryBushBlock(Properties properties){
+        super(properties);
     }
 
     @Override
-    public ItemStack getCloneItemStack(LevelReader pLevel, BlockPos pos, BlockState pState) {
+    public ItemStack getCloneItemStack(LevelReader pLevel, BlockPos pPos, BlockState pState) {
         return new ItemStack(ModItems.BOO_BERRIES.get());
     }
 

@@ -43,8 +43,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.ALEXANDRITE_STONE_BLOCK.get(),
                 block -> createMultipleOreDrops(ModBlocks.ALEXANDRITE_STONE_BLOCK.get(), ModItems.ALEXANDRITE.get(), 1,4));
 
-//        this.add(ModBlocks.MAGIC_TREE_LEAVES.get(),
-//                block -> );
+        this.add(ModBlocks.MAGIC_TREE_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.MAGIC_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
 
@@ -60,8 +60,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                                                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SweetBerryBushBlock.AGE, 2))
                                 ).add(LootItem.lootTableItem(ModItems.BOO_BERRIES.get()))
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
-                                .apply(ApplyBonusCount.addUniformBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))
-                )));
+                                .apply(ApplyBonusCount.addUniformBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE))))));
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {
