@@ -4,8 +4,9 @@ import com.mojang.logging.LogUtils;
 import net.gray.examplemod.Item.ModItems;
 import net.gray.examplemod.block.ModBlocks;
 import net.gray.examplemod.entity.ModEntities;
+import net.gray.examplemod.entity.client.ChairRenderer;
 import net.gray.examplemod.entity.client.MagicPigRenderer;
-import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.gray.examplemod.villager.ModVillagers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -43,6 +44,8 @@ public class ExampleMod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModEntities.register(modEventBus);
+
+        ModVillagers.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -97,6 +100,10 @@ public class ExampleMod
             event.accept(ModItems.MAGIC_PIG_SPAWN_EGG);
         }
 
+        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS){
+            event.accept(ModBlocks.CHAIR);
+        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -114,6 +121,8 @@ public class ExampleMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             EntityRenderers.register(ModEntities.MAGIC_PIG.get(), MagicPigRenderer::new);
+
+            EntityRenderers.register(ModEntities.CHAIR.get(), ChairRenderer::new);
         }
     }
 }

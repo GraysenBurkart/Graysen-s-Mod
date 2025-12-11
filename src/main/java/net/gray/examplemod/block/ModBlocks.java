@@ -3,6 +3,7 @@ package net.gray.examplemod.block;
 import net.gray.examplemod.ExampleMod;
 import net.gray.examplemod.Item.ModItems;
 import net.gray.examplemod.block.custom.BooBerryBushBlock;
+import net.gray.examplemod.block.custom.ChairBlock;
 import net.gray.examplemod.block.custom.ModFlammableRotatedPillarBlock;
 import net.gray.examplemod.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
@@ -77,6 +78,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> MAGIC_SAPLING = registryBlock("magid_sapling",
             () -> new SaplingBlock(ModTreeGrowers.MAGIC, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> CHAIR = registryBlock("chair",
+            () -> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion()));
 
     public static final RegistryObject<Block> PURPLE_MOSS_BLOCK = registryBlock("purple_moss_block.json.json",
             () -> new Block(BlockBehaviour.Properties.of()

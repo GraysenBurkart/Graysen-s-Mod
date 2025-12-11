@@ -14,6 +14,8 @@
 
   "item.examplemod.magic_pig_spawn_egg": "Magic Pig Spawn Egg",
 
+  "block.examplemod.chair": "Chair",
+
   "block.examplemod.alexandrite_stone_block": "Alexandrite Block",
   "block.examplemod.alexandrite_block": "Block of Alexandrite",
   "block.examplemod.magic_tree_block": "Magic Tree Log",
@@ -24,6 +26,8 @@
 
   "block.examplemod.boo_berry_bush": "Boo Berry Bush",
 
-  "entity.examplemod.magic_pig": "Magic Pig"
+  "entity.examplemod.magic_pig": "Magic Pig",
+
+  "entity.minecraft.villager.examplemod.jeweler": "Jeweler"
 
 }
